@@ -1,11 +1,13 @@
 # ss-components
-Straight forward JavaScript component. Designed to work with SilverStripe but can be used anywhere
+Straight forward JavaScript grid. A helper for Boostrap 4 Grid, Draws columns on DOM, calculates cols, containers and gutters without DOM.
 
 ## to install 
 
-`npm i ss-components -s`
+`npm i ss-grid -s`
 
 ## Example 
+
+See `tests` folder
 
 ```javascript
 import Components from "ss-components";
