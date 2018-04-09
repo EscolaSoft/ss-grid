@@ -10,24 +10,23 @@ Straight forward JavaScript grid. A helper for Boostrap 4 Grid, Draws columns on
 See `tests` folder
 
 ```javascript
-import Components from "ss-components";
 
-// standard components
-import SideMenu from "./js/components/SideMenu.js";
-import Title from "./js/components/Title.js";
+import Grid from "ss-grid";
 
-// diagram components types 
-import BarDiagram from './js/components/BarDiagram.js';
+const config = require('sass-extract-loader!./_bootstrap-config.scss');
 
-// register components
-Components.register('side-menu', SideMenu);
-Components.register('tooltip', Tooltip);
+let grid = new Grid(config);
+grid.attach(); // attaches grid to DOM
+grid.toggle(); // show/hide grid helper 
 
-// register diagrams
-Components.register('BarDiagram', BarDiagram);
+console.log(grid.columns);
+console.log(grid.containerWidth);
+console.log(grid.gutterWidth);
+console.log(grid.columnWidth);
 
-//attaching all components
-Components.attach();
+
+window.__grid = grid; // this is just for test purposes
+
 ```
 
 ## API Documentation
