@@ -7,12 +7,16 @@ Class representing a Grid Helper.
 
 * [Grid](#Grid)
     * [new Grid(options)](#new_Grid_new)
+    * [.currentBreakPoint](#Grid+currentBreakPoint)
     * [.containerWidth](#Grid+containerWidth)
+    * [.containerWidthFull](#Grid+containerWidthFull)
     * [.columns](#Grid+columns)
     * [.gutterWidth](#Grid+gutterWidth)
+    * [.gutterWidthFull](#Grid+gutterWidthFull)
     * [.columnWidth](#Grid+columnWidth)
+    * [.columnWidthFull](#Grid+columnWidthFull)
     * [.attach()](#Grid+attach)
-    * [.toggle()](#Grid+toggle)
+    * [.toggleGrid()](#Grid+toggleGrid)
 
 <a name="new_Grid_new"></a>
 
@@ -24,9 +28,21 @@ Create a Grid Helper.
 | --- | --- | --- | --- |
 | options | <code>object</code> | <code></code> | are either options that extends DEFAUTLS or sass file loaded with `sass-extract-loader` webpack plugin |
 
+<a name="Grid+currentBreakPoint"></a>
+
+### grid.currentBreakPoint
+TODO add description
+
+**Kind**: instance property of [<code>Grid</code>](#Grid)  
 <a name="Grid+containerWidth"></a>
 
 ### grid.containerWidth
+TODO add description
+
+**Kind**: instance property of [<code>Grid</code>](#Grid)  
+<a name="Grid+containerWidthFull"></a>
+
+### grid.containerWidthFull
 TODO add description
 
 **Kind**: instance property of [<code>Grid</code>](#Grid)  
@@ -42,9 +58,21 @@ TODO add description
 TODO add description
 
 **Kind**: instance property of [<code>Grid</code>](#Grid)  
+<a name="Grid+gutterWidthFull"></a>
+
+### grid.gutterWidthFull
+TODO add description
+
+**Kind**: instance property of [<code>Grid</code>](#Grid)  
 <a name="Grid+columnWidth"></a>
 
 ### grid.columnWidth
+TODO add description
+
+**Kind**: instance property of [<code>Grid</code>](#Grid)  
+<a name="Grid+columnWidthFull"></a>
+
+### grid.columnWidthFull
 TODO add description
 
 **Kind**: instance property of [<code>Grid</code>](#Grid)  
@@ -54,9 +82,9 @@ TODO add description
 TODO add description
 
 **Kind**: instance method of [<code>Grid</code>](#Grid)  
-<a name="Grid+toggle"></a>
+<a name="Grid+toggleGrid"></a>
 
-### grid.toggle()
+### grid.toggleGrid()
 TODO add description
 
 **Kind**: instance method of [<code>Grid</code>](#Grid)  

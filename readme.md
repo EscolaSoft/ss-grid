@@ -7,7 +7,7 @@ Straight forward JavaScript grid. A helper for Boostrap 4 Grid, Draws columns on
 
 ## Example 
 
-See `tests` folder
+See `examples` folder
 
 ```javascript
 

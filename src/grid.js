@@ -136,14 +136,23 @@ class Grid {
    */
 
   attach() {
+    this.once = true;
     let self = this;
     window.addEventListener('keydown', function(e) {
       var tagName =  e.target.tagName.toLowerCase();
       if (e.key === 'g' && tagName != 'input' && tagName != 'textarea' ) {
-        self.toggle();
+        self.toggleGrid();
+      }
+
+      if (e.key === 'f' && tagName != 'input' && tagName != 'textarea' ) {
+        self.toggleGrid(true);
       }
     });
   }
+
+  /** 
+   * TODO add description
+   */
 
   get currentBreakPoint() {
     var breakpoint = '';
@@ -166,17 +175,16 @@ class Grid {
     return breakpoint;
 
   }
-
-   /** 
+  /** 
    * TODO add description
    */
-
   get containerWidth() {
     
     var windowWidth = document.body.clientWidth;
     var currentBreakpoint = this.currentBreakPoint;
     var maxWidth = this._parseVar(this.config['calculated-container-max-widths'][currentBreakpoint]);
 
+    
 
     if (maxWidth <= 1) {
       //percentage 
@@ -189,20 +197,38 @@ class Grid {
     }
    
   }
-
-   /** 
+  /** 
    * TODO add description
    */
+  get containerWidthFull() {
+    
+    var windowWidth = window.innerWidth;
+    var currentBreakpoint = this.currentBreakPoint;
+    var maxWidth = this._parseVar(this.config['calculated-container-max-widths'][currentBreakpoint]);
 
+    
+
+    if (maxWidth <= 1) {
+      //percentage 
+      return windowWidth * maxWidth;
+    } else {
+      if (windowWidth < maxWidth) {
+        return windowWidth;
+      } 
+      return maxWidth;
+    }
+   
+  }
+  /** 
+   * TODO add description
+   */
   get columns() {
     return this.config["grid-columns"];
     
   }
-
-   /** 
+  /** 
    * TODO add description
    */
-
   get gutterWidth() {
     
     var windowWidth = document.body.clientWidth;
@@ -213,27 +239,44 @@ class Grid {
     return gutterWidth;
 
   }
-
-   /** 
+  /** 
    * TODO add description
    */
+  get gutterWidthFull() {
+    
+    var windowWidth = window.innerWidth;
+    var currentBreakpoint = this.currentBreakPoint;
 
+    var gutterWidth = this._parseVar(this.config['calculated-grid-gutter-widths'][currentBreakpoint]);
+
+    return gutterWidth;
+
+  }
+  /** 
+   * TODO add description
+   */
   get columnWidth() {
     
     return (this.containerWidth / this.columns) - (1 * this.gutterWidth);
 
   }
-
-   /** 
+  /** 
    * TODO add description
    */
+  get columnWidthFull() {
+    
+    return (this.containerWidthFull / this.columns) - (1 * this.gutterWidthFull);
 
-  toggle() {
+  }
+  /** 
+   * TODO add description
+   */
+  toggleGrid(fluid = false) {
     if (this.onStage) {
       document.querySelector('.grid-helper').parentNode.removeChild(document.querySelector('.grid-helper'));
     } else {
       let html = "<div class='grid-helper' style='z-index: 999; width:100%; height: 100%; position:fixed; left:0; top:0;'>";
-      html += "<div class='container' style='height:100%;'>";
+      html += "<div class='"+(fluid ? "container-fluid" : "container")+"' style='height:100%;'>";
       html += "<div class='row' style='height:100%;'>";
       for (let i = 1; i <= this.columns; i++) {
         let border_style = i == 1 ?  `border-right: ${this.colStyle[2]} ;border-left: ${this.colStyle[2]}` : `border-right: ${this.colStyle[2]}`;
