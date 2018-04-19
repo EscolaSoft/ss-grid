@@ -147,7 +147,7 @@ class Grid {
       if (e.key === 'f' && tagName != 'input' && tagName != 'textarea' ) {
         self.toggleGrid(true);
       }
-    });
+    }, true);
   }
 
   /** 

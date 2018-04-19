@@ -157,7 +157,7 @@ var Grid = function () {
         if (e.key === 'f' && tagName != 'input' && tagName != 'textarea') {
           self.toggleGrid(true);
         }
-      });
+      }, true);
     }
 
     /** 

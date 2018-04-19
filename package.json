@@ -1,6 +1,6 @@
 {
   "name": "ss-grid",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Straight forward JavaScript grid. A helper for Boostrap 4 Grid, Draws columns on DOM, calculates cols, containers and gutters without DOM.",
   "main": "dist/grid.js",
   "scripts": {
